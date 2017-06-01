@@ -1,0 +1,117 @@
+@margin_20 : 20px;
+
+@media screen and (min-width:992px){
+	.logo img {
+	    margin: 4px 0 0 2px !important;
+	}
+}
+
+@media screen and (min-width:768px){
+	.block.newsletter{
+		width:auto !important;
+	}
+
+	.nav-sections{
+		background: rgba(0, 0, 0, 0.2) !important;
+		max-height: inherit;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+		overflow:hidden;
+
+		.navigation{
+			background:none !important;
+			.menu__top-box{
+				text-align:center;
+
+				li a{
+					line-height: 72px !important;
+					padding: 0 32px !important;
+					@media (min-width:768px) and (max-width:991px){
+						padding: 0 20px !important;
+					}
+					color: #FFF !important;
+					font-weight: normal;
+					text-transform: uppercase;
+					position: relative;
+					font-family: 'Raleway-Bold' !important;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:991px){
+	.panel.wrapper{
+		background: rgb(0, 0, 0) !important;
+	}
+
+	.footer-copyright{
+		padding: 20px 0 !important;
+	}
+}
+
+@media screen and (max-width:767px){
+	.panel.wrapper{
+		text-align:center;
+		.phone-box{
+			margin-bottom:@margin_20 !important;
+		}
+	}
+
+	.header__content-box{
+		text-align:center;
+		
+		.logo {
+			float:none !important;
+			img{
+				display:inline-block !important;
+				margin-bottom:@margin_20 !important;
+			}
+		}
+
+		.minicart-wrapper{
+			float:none !important;
+			margin-bottom:@margin_20 !important;
+		}
+
+		.header__content__switch-box{
+			display: inline-flex;
+			margin: 20px 0 !important;
+			.language-box{
+				margin-right:10px !important;
+				text-align:left !important;
+			}
+		}
+		.block-search .label{
+			float:none !important;
+		}	
+	}
+
+	.footer__info-box{
+		.item{
+			margin-bottom:@margin_20 !important;
+		}
+	}
+
+	.page-footer{
+		.footer__subscribe-box{
+			input#newsletter{
+				width: 100% !important;
+				margin-bottom:@margin_20 !important;
+			}
+
+			.block.newsletter .actions{
+				display:block !important;
+				text-align:center;
+				width:auto !important;
+				button.subscribe.primary{
+					display:inline-block !important;
+					margin-bottom:@margin_20 !important;
+				}
+			}
+			.social-box{
+				text-align:center;
+			}
+		}
+	}
+}
+

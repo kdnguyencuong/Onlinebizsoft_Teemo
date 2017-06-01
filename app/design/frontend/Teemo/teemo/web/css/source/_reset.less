@@ -1,0 +1,126 @@
+html {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: inherit !important;
+    -moz-box-sizing: inherit !important;
+    box-sizing: inherit !important;
+}
+
+* {
+    outline: 0 !important;
+}
+
+a {
+    color: #444444 !important;
+    text-decoration: none;
+    &:hover{
+    	text-decoration: underline !important;
+    }
+} 
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+[class*="col-"] {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.container:before,
+.container:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after,
+.container:after {
+    clear: both;
+}
+
+[class*="icon-"]::before {
+    position: absolute;
+}
+
+input[type="text"] {
+    background: transparent !important;
+    border: 1px solid #373737 !important;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Raleway-Regular.woff') format('woff'), url('../fonts/Raleway-Regular.ttf') format('truetype'), url('../fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url('../fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Raleway-Bold.woff') format('woff'), url('../fonts/Raleway-Bold.ttf') format('truetype'), url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Raleway';
+    line-height: 1.5em;
+    font-size: 14px !important;
+    background-color: #FFF;
+}
+
+h4 {
+    color: #222222 !important;
+    text-transform: uppercase;
+    line-height: 14px !important;
+    display: block;
+    border-bottom: 1px solid #e5e5e5 !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 24px !important;
+    letter-spacing: 1.5px;
+}
+
+

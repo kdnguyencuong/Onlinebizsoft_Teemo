@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <!-- HEADER -->
+            <referenceContainer name="header.container">
+                <referenceContainer name="header.panel.wrapper">
+                    <referenceContainer name="header.panel" htmlClass="container">
+                        <container name="header.panel.phone.number" label="Page Header Panel Phone Number" htmlTag="div" htmlClass="header__panel__phone-box">
+                            <block class="Magento\Framework\View\Element\Template" name="phone.number.block" template="Magento_Theme::home/header/header_phone.phtml"/>
+                                <!-- <arguments>
+                                    <argument name="block_id" xsi:type="string">header-panel-phone</argument>
+                                </arguments>
+                            </block> -->
+                        </container>
+                        <container name="header.panel.link" label="Page Header Panel Link" htmlTag="div" htmlClass="header__panel__link-box">
+                            <block class="Magento\Framework\View\Element\Template" name="header.links.block" template="Magento_Theme::home/header/header_link.phtml" />
+                                <!-- <arguments>
+                                    <argument name="block_id" xsi:type="string">header-panel-link</argument>
+                                </arguments>
+                            </block> -->
+                        </container>
+
+                        <referenceBlock name="header.links" remove="true" />
+                        <referenceBlock name="top.links" remove="true"/>
+                        <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+                        <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link  -->
+                        <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
+                        <referenceBlock name="my-account-link" remove="true" />         <!--for My Account Link-->
+                    </referenceContainer> 
+                </referenceContainer>
+                <container name="header.content.container" htmlTag="div" htmlClass="header__content-box" after="header.panel.wrapper">
+                    <container name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="container">
+                        <!-- Logo -->
+                        <referenceBlock name="logo">
+                            <arguments>
+                                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                                <argument name="logo_img_width" xsi:type="number">111</argument>
+                                <argument name="logo_img_height" xsi:type="number">41</argument>
+                            </arguments>
+                        </referenceBlock>
+                        <!-- end Logo -->
+                        <container name="header.content.right" htmlTag="div" htmlClass="header__content__right-box col-mobile-12 col-tablet-9 col-desktop-10" after="logo">
+                            <container name="header.content.switch.box" htmlTag="div" htmlClass="header__content__switch-box">
+                                <container name="header.content.switch.language" htmlTag="div" htmlClass="header__language-box" after="minicart">
+                                   <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+                                </container>
+                                <container name="header.content.switch.currency" htmlTag="div" htmlClass="header__currency-box" after="header.content.switch.language">
+                                    <block name="currency" class="Magento\Directory\Block\Currency" template="currency.phtml" />
+                                </container>
+                            </container>
+                        </container>   
+                    </container>
+                </container>
+            </referenceContainer>
+           
+            <referenceContainer name="footer-container">
+                <container name="footer.info" label="Page Footer Top" htmlTag="div" htmlClass="" before="-">
+                    <block name="footer.info.block" class="Magento\Framework\View\Element\Template" template="Magento_Theme::home/footer_info.phtml"/>
+                </container>
+                <container name="footer.subscribe" label="Page Footer Subscribe" htmlTag="div" htmlClass="footer__subscribe-box" after="footer.info">
+                    <container name="footer.subscribe.container" htmlTag="div" htmlClass="container">
+                        <block name="footer.social" class="Magento\Framework\View\Element\Template" template="Magento_Theme::home/footer_social.phtml" after="-"/> 
+                    </container>  
+                </container>
+                <container name="footer.copyright" htmlTag="div" htmlClass="footer-copyright" after="footer.subscribe"/>
+                <referenceContainer name="footer">
+                    <container name="footer.bottom.container" htmlTag="div" htmlClass="container">
+                        <container name="footer.bottom.link" htmlTag="div" htmlClass="footer__menu-bottom col-mobile-12 col-laptop-7" before="-"/>
+                        <block name="footer.payment.block" class="Magento\Framework\View\Element\Template" template="Magento_Theme::home/footer_payment.phtml" after="-"/> 
+                    </container>
+                </referenceContainer>
+            </referenceContainer>
+            <!-- Move language block into left cart block -->
+
+        <!-- END HEADER -->
+       <!-- <move element="currency" destination="header-wrapper" after="store_language" /> -->
+<!--        <move element="subscribe" destination="footer.subscribe.container" before="footer.social"/> -->
+       <move element="minicart" destination="header.content.right" before="-" />
+       <move element="top.search" destination="header.content.right" after="-" />
+       <move element="form.subscribe" destination="footer.subscribe.container" before="-" />
+       
+       <move element="footer_links" destination="footer.bottom.link" before="-"/>
+       <move element="copyright" destination="footer.copyright"/>
+       <referenceBlock name="report.bugs" remove="true"/>
+       <referenceBlock name="store_switcher" remove="true"/>
+    </body>
+</page>
